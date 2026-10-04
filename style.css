@@ -150,3 +150,104 @@ main {
 #rotate-resistor-button:hover {
   background: #555;
 }
+
+
+/* ==============================
+   SÚGÓ
+   ============================== */
+
+.help-button {
+  margin-left: auto;
+  padding: 8px 14px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  background: #444;
+  color: white;
+  cursor: pointer;
+}
+
+.help-button:hover {
+  background: #555;
+}
+
+.help-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.help-modal.hidden {
+  display: none;
+}
+
+.help-dialog {
+  width: min(760px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 22px 26px 28px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.help-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.help-header h2 {
+  margin: 0;
+}
+
+.help-close-button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.help-language-switch {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0 22px;
+}
+
+.help-language-switch button {
+  padding: 7px 12px;
+  border: 1px solid #777;
+  border-radius: 4px;
+  background: white;
+  color: #222;
+  cursor: pointer;
+}
+
+.help-language-switch button.active {
+  background: #222;
+  color: white;
+}
+
+.help-content {
+  line-height: 1.55;
+}
+
+.help-content h3 {
+  margin: 24px 0 8px;
+}
+
+.help-content p {
+  margin: 8px 0;
+}
+
+.help-content li {
+  margin: 7px 0;
+}

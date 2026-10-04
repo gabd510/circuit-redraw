@@ -22,6 +22,8 @@
 
         <button id="wire-tool">Vezeték</button>
       </div>
+
+      <button id="help-button" class="help-button">Súgó</button>
     </header>
 
     <main>
@@ -106,6 +108,137 @@
         </aside>
       </div>
     </main>
+
+
+    <div id="help-modal" class="help-modal hidden">
+      <div class="help-dialog" role="dialog" aria-modal="true" aria-labelledby="help-title">
+        <div class="help-header">
+          <h2 id="help-title">Használati útmutató</h2>
+          <button id="help-close-button" class="help-close-button" aria-label="Bezárás">×</button>
+        </div>
+
+        <div class="help-language-switch">
+          <button id="help-hu-button" class="active">Magyar</button>
+          <button id="help-en-button">English</button>
+        </div>
+
+        <div id="help-hu" class="help-content">
+          <p>
+            A program ellenállásos kapcsolási rajzok vizuális átrajzolására és
+            rendezésére szolgál. Elektromos számításokat nem végez.
+          </p>
+
+          <h3>Mozgatás</h3>
+          <p>
+            A már létrehozott elemek kijelölésére és átrendezésére használható.
+            A kijelölt elem kékkel jelenik meg, a hozzá tartozó beállítások pedig
+            a jobb oldali Tulajdonságok panelen érhetők el.
+          </p>
+          <ul>
+            <li><strong>Csomópont:</strong> kattintással kijelölhető, húzással mozgatható. A hozzá kapcsolódó vezetékek követik. Ha egy csomópontot pontosan egy másikra húzol, a kettő összeolvad.</li>
+            <li><strong>Ellenállás:</strong> kattintással kijelölhető és húzással mozgatható. A jobb oldali panelen módosítható a neve és értéke, 90°-kal forgatható, illetve törölhető.</li>
+            <li><strong>Vezeték:</strong> kattintással kijelölhető. A két végén megjelenő fogantyúkkal a vezeték vége áthúzható másik csomópontra vagy ellenállás-terminálra. Ha nem érvényes csatlakozón engeded el, visszaugrik az eredeti helyére.</li>
+            <li><strong>Vezetéktöréspont:</strong> a vezetékre duplán kattintva hozható létre. A töréspont húzással mozgatható, kijelölve pedig a jobb oldali panelről törölhető.</li>
+          </ul>
+
+          <h3>Csomópont</h3>
+          <p>
+            Üres területre kattintva új csomópont jön létre. A csomópontok
+            automatikusan A, B, C… nevet kapnak, amely később módosítható.
+          </p>
+          <p>
+            Ha közvetlenül egy meglévő vezetékre kattintasz, az új csomópont
+            bekerül a vezetékbe, és a program automatikusan két részre bontja a
+            vezetéket.
+          </p>
+
+          <h3>Ellenállás</h3>
+          <p>
+            Üres területre kattintva új ellenállás helyezhető el. Az ellenállások
+            automatikusan R1, R2, R3… nevet kapnak.
+          </p>
+          <p>
+            Ha egy meglévő vezetékre helyezed, a program automatikusan beilleszti
+            az ellenállást a vezetékbe. Vízszintes vezetékszakaszon vízszintesen,
+            függőleges szakaszon függőlegesen kerül elhelyezésre.
+          </p>
+
+          <h3>Vezeték</h3>
+          <p>
+            Új kapcsolat létrehozásához kattints az első csatlakozási pontra,
+            majd a másodikra. Csatlakozási pont lehet csomópont vagy egy
+            ellenállás valamelyik terminálja.
+          </p>
+          <p>
+            Létrehozás után a Mozgatás eszközzel a vezeték kijelölhető,
+            átköthető, töréspontokkal alakítható vagy törölhető.
+          </p>
+
+          <h3>Rács</h3>
+          <p>
+            Az elemek és töréspontok automatikusan a háttér 20 pixeles rácsához
+            igazodnak, hogy a rajz könnyen rendezhető maradjon.
+          </p>
+        </div>
+
+        <div id="help-en" class="help-content hidden">
+          <p>
+            The application is intended for visually redrawing and rearranging
+            resistor circuit diagrams. It does not perform electrical calculations.
+          </p>
+
+          <h3>Move</h3>
+          <p>
+            Use this tool to select and rearrange existing elements. The selected
+            element is highlighted in blue and its available settings appear in
+            the Properties panel on the right.
+          </p>
+          <ul>
+            <li><strong>Node:</strong> click to select and drag to move. Connected wires follow automatically. Dragging a node directly onto another node merges them.</li>
+            <li><strong>Resistor:</strong> click to select and drag to move. Its name and displayed value can be edited in the right panel; it can also be rotated by 90° or deleted.</li>
+            <li><strong>Wire:</strong> click to select. Endpoint handles appear at both ends. Drag a handle onto another node or resistor terminal to reconnect it. If released without a valid connection, it returns to its original position.</li>
+            <li><strong>Wire bend point:</strong> double-click a wire to create one. Bend points can be dragged and can be deleted from the right panel when selected.</li>
+          </ul>
+
+          <h3>Node</h3>
+          <p>
+            Click an empty position to create a new node. Nodes are named
+            automatically A, B, C… and can be renamed later.
+          </p>
+          <p>
+            Clicking directly on an existing wire inserts the new node into that
+            wire and automatically splits the wire into two sections.
+          </p>
+
+          <h3>Resistor</h3>
+          <p>
+            Click an empty position to place a new resistor. Resistors are named
+            automatically R1, R2, R3….
+          </p>
+          <p>
+            Placing a resistor directly on an existing wire automatically inserts
+            it into the connection. It is placed horizontally on a horizontal wire
+            segment and vertically on a vertical segment.
+          </p>
+
+          <h3>Wire</h3>
+          <p>
+            To create a connection, click the first connection point and then the
+            second. A connection point can be a node or either terminal of a resistor.
+          </p>
+          <p>
+            After creation, switch to Move to select the wire, reconnect its
+            endpoints, add bend points, or delete it.
+          </p>
+
+          <h3>Grid</h3>
+          <p>
+            Elements and bend points automatically snap to the 20-pixel background
+            grid to keep diagrams easy to arrange.
+          </p>
+        </div>
+      </div>
+    </div>
 
     <script src="app.js"></script>
   </body>

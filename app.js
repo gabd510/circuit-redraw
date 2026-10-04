@@ -1446,3 +1446,55 @@ function updateDrawing() {
     });
   });
 }
+
+
+// ==============================
+// SÚGÓ
+// ==============================
+
+const helpButton = document.getElementById("help-button");
+const helpModal = document.getElementById("help-modal");
+const helpCloseButton = document.getElementById("help-close-button");
+const helpHuButton = document.getElementById("help-hu-button");
+const helpEnButton = document.getElementById("help-en-button");
+const helpHu = document.getElementById("help-hu");
+const helpEn = document.getElementById("help-en");
+
+function setHelpLanguage(language) {
+  const isHungarian = language === "hu";
+
+  helpHu.classList.toggle("hidden", !isHungarian);
+  helpEn.classList.toggle("hidden", isHungarian);
+
+  helpHuButton.classList.toggle("active", isHungarian);
+  helpEnButton.classList.toggle("active", !isHungarian);
+
+  document.getElementById("help-title").textContent =
+    isHungarian ? "Használati útmutató" : "Instructions for use";
+}
+
+function openHelp() {
+  setHelpLanguage("hu");
+  helpModal.classList.remove("hidden");
+}
+
+function closeHelp() {
+  helpModal.classList.add("hidden");
+}
+
+helpButton.addEventListener("click", openHelp);
+helpCloseButton.addEventListener("click", closeHelp);
+helpHuButton.addEventListener("click", () => setHelpLanguage("hu"));
+helpEnButton.addEventListener("click", () => setHelpLanguage("en"));
+
+helpModal.addEventListener("pointerdown", (event) => {
+  if (event.target === helpModal) {
+    closeHelp();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !helpModal.classList.contains("hidden")) {
+    closeHelp();
+  }
+});
