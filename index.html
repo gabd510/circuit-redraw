@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kapcsolási rajz átrajzoló</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Kapcsolási rajz átrajzoló</h1>
+
+      <div class="toolbar">
+        <button id="select-tool" class="active">Mozgatás</button>
+
+        <button id="node-tool">Csomópont</button>
+
+        <button id="resistor-tool">Ellenállás</button>
+
+        <button id="wire-tool">Vezeték</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="workspace">
+        <svg id="drawing-area">
+          <defs>
+            <pattern
+              id="grid"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 20 0 L 0 0 0 20"
+                fill="none"
+                stroke="#e5e5e5"
+                stroke-width="1"
+              />
+            </pattern>
+          </defs>
+
+          <rect
+            id="grid-background"
+            width="100%"
+            height="100%"
+            fill="url(#grid)"
+          />
+        </svg>
+
+        <aside id="properties-panel">
+          <h2>Tulajdonságok</h2>
+
+          <div id="no-selection">Nincs kijelölt elem.</div>
+
+          <div id="node-properties" class="properties-section hidden">
+            <h3>Csomópont</h3>
+
+            <label for="node-name-input"> Név </label>
+
+            <input id="node-name-input" type="text" />
+
+            <button id="delete-node-button" class="delete-button">
+              Csomópont törlése
+            </button>
+          </div>
+
+          <div id="resistor-properties" class="properties-section hidden">
+            <h3>Ellenállás</h3>
+
+            <label for="resistor-name-input"> Név </label>
+
+            <input id="resistor-name-input" type="text" />
+
+            <label for="resistor-value-input"> Érték </label>
+
+            <input id="resistor-value-input" type="text" />
+
+            <button id="rotate-resistor-button">
+              Forgatás 90°
+            </button>
+
+            <button id="delete-resistor-button" class="delete-button">
+              Ellenállás törlése
+            </button>
+          </div>
+
+          <div id="wire-properties" class="properties-section hidden">
+            <h3>Vezeték</h3>
+
+            <button id="delete-wire-button" class="delete-button">
+              Vezeték törlése
+            </button>
+          </div>
+
+          <div id="wire-point-properties" class="properties-section hidden">
+            <h3>Vezetéktöréspont</h3>
+
+            <button id="delete-wire-point-button" class="delete-button">
+              Töréspont törlése
+            </button>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

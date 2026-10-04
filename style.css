@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+header {
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  padding: 10px 20px;
+
+  background: #222;
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+}
+
+.toolbar button {
+  padding: 8px 14px;
+
+  border: 1px solid #777;
+  border-radius: 5px;
+
+  background: #444;
+  color: white;
+
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  background: #555;
+}
+
+.toolbar button.active {
+  background: white;
+  color: #222;
+}
+
+main {
+  padding: 20px;
+}
+
+#workspace {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 105px);
+}
+
+#drawing-area {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+
+  background: white;
+  border: 1px solid #aaa;
+
+  touch-action: none;
+}
+
+#properties-panel {
+  width: 250px;
+  padding: 18px;
+
+  background: white;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+#properties-panel h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+#properties-panel h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.properties-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.properties-section label {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.properties-section input {
+  width: 100%;
+  padding: 8px;
+
+  border: 1px solid #aaa;
+  border-radius: 4px;
+
+  font-size: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.delete-button {
+  margin-top: 18px;
+  padding: 9px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #b71c1c;
+  color: white;
+
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #d32f2f;
+}
+
+
+#rotate-resistor-button {
+  margin-top: 14px;
+  padding: 9px;
+  border: 1px solid #777;
+  border-radius: 4px;
+  background: #444;
+  color: white;
+  cursor: pointer;
+}
+
+#rotate-resistor-button:hover {
+  background: #555;
+}
